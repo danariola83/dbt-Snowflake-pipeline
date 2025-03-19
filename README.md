@@ -1,7 +1,36 @@
 Overview
 ========
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+This project is a recreation of jayzern's (YouTube) data pipeline that takes a sample dataset from snowflake, transforms it with DBT, is orchestrated using Airflow via Cosmos, and is conteinerized with Docker.
+
+System Architecture
+===================
+![System Architecture](dbt-Snowflake-pipeline.png)
+
+Data Sources and Destinations
+=============================
+
+* Raw data is extracted from Snowflake's SNOWFLAKE_SAMPLE_DATA database, under its TPCH_SF1 schema, using tables OREDERS and LINEITEMS.
+* The data destination is database also in Snowflake created using the SQL query below:
+```
+use role accountadmin;
+
+create warehouse if not exists dbt_wh with warehouse_size='x-small';
+create database if not exists dbt_db;
+create role if not exists dbt_role;
+
+show grants on warehouse dbt_wh;
+
+grant usage on warehouse dbt_wh to role dbt_role;
+grant role dbt_role to user danariola83;
+grant all on database dbt_db to role dbt_role;
+
+use role dbt_role;
+
+create schema if not exists dbt_db.dbt_schema;
+```
+
+
 
 Project Contents
 ================
