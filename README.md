@@ -1,7 +1,7 @@
 Overview
 ========
 
-This project is a recreation of jayzern's (YouTube: [https://www.youtube.com/@jayzern]) data pipeline that takes a sample dataset from snowflake, transforms it with DBT, is orchestrated using Airflow via Cosmos, and is containerized with Docker.
+This project is a recreation of [jayzern's](https://www.youtube.com/@jayzern) data pipeline that takes a sample dataset from snowflake, transforms it with DBT, is orchestrated using Airflow via Cosmos, and is containerized with Docker.
 
 System Architecture
 ===================
