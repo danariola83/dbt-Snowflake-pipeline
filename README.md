@@ -1,11 +1,21 @@
 Overview
 ========
 
-This project is a recreation of jayzern's (YouTube) data pipeline that takes a sample dataset from snowflake, transforms it with DBT, is orchestrated using Airflow via Cosmos, and is conteinerized with Docker.
+This project is a recreation of jayzern's (YouTube) data pipeline that takes a sample dataset from snowflake, transforms it with DBT, is orchestrated using Airflow via Cosmos, and is containerized with Docker.
 
 System Architecture
 ===================
 ![System Architecture](dbt-Snowflake-pipeline.png)
+
+## Pre-requisites
+1. Snowflake account
+2. GitHub account
+3. IDE with git integration
+4. Docker Desktop
+5. Packages:
+    a. dbt-snowflake
+    b. dbt-core
+    c. astronomer-cosmos
 
 Data Sources and Destinations
 =============================
@@ -29,7 +39,11 @@ use role dbt_role;
 
 create schema if not exists dbt_db.dbt_schema;
 ```
-
+* This project uses both singular and generic data tests including:
+-   uniqueness and absence of null values
+-   referential integrity
+-   accepted values
+-   values falling within a specified date range
 
 
 Project Contents
