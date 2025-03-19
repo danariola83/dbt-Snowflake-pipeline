@@ -40,10 +40,10 @@ use role dbt_role;
 create schema if not exists dbt_db.dbt_schema;
 ```
 * This project uses both singular and generic data tests including:
--   uniqueness and absence of null values
--   referential integrity
--   accepted values
--   values falling within a specified date range
+    -   uniqueness and absence of null values
+    -   referential integrity
+    -   accepted values
+    -   values falling within a specified date range
 
 
 Project Contents
