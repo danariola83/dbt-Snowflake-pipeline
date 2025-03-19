@@ -21,7 +21,7 @@ Data Sources and Destinations
 =============================
 
 * Raw data is extracted from Snowflake's SNOWFLAKE_SAMPLE_DATA database, under its TPCH_SF1 schema, using tables OREDERS and LINEITEMS.
-* The data destination is database also in Snowflake created using the SQL query below:
+* The Snowflake enviroment that the data will be loaded on to was created using the SQL query below:
 ```
 use role accountadmin;
 
@@ -49,7 +49,7 @@ create schema if not exists dbt_db.dbt_schema;
 Project Contents
 ================
 
-Your Astro project contains the following files and folders:
+The project contains the following files and folders:
 
 - dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
     - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
@@ -60,7 +60,7 @@ Your Astro project contains the following files and folders:
 - plugins: Add custom or community plugins for your project to this file. It is empty by default.
 - airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
 
-Deploy Your Project Locally
+Deploying the Project Locally
 ===========================
 
 1. Start Airflow on your local machine by running 'astro dev start'.
