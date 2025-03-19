@@ -13,9 +13,9 @@ System Architecture
 3. IDE with git integration
 4. Docker Desktop
 5. Packages:
-        a. dbt-snowflake
-        b. dbt-core
-        c. astronomer-cosmos
+    - dbt-snowflake
+    - dbt-core
+    - astronomer-cosmos
 
 Data Sources and Destinations
 =============================
